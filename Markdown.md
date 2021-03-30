@@ -2,8 +2,15 @@
 
 ---
 
-## Markdown 概述 [Overview]
+### Markdown 概述 [Overview]
 
+Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。
+
+Markdown 语言在 2004 由约翰·格鲁伯（英语：John Gruber）创建。
+
+Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。
+
+Markdown 编写的文档后缀为 .md, .markdown。
 
 -------------------------------------------------------------------------
 
@@ -47,9 +54,8 @@ __删除线：__ 如果段落上的文字要添加~~删除线~~，只需要在�
 
 __下划线：__ <u>下划线</u>可以通过 HTML 的 <u\> 标签来实现。  
 
-__脚注：__ 脚注是对文本的补充说明。[^RUNOOB]。  
+__脚注：__ 脚注是对文本的补充说明。(部分不支持)
 
-_这个有问题_[^RUNOOB]: 菜鸟教程 -- 学的不仅是技术，更是梦想！！！
 
 ___语法示例：___ 
 ```javascript
@@ -58,6 +64,10 @@ ___语法示例：___
 ---
 ~~删除线~~
 <u>下划线</u>
+创建脚注格式 [^footnoteFormat]。
+
+[^footnoteFormat]: 这里是文本的补充说明。
+
 ```
 
 ___效果如下：___
@@ -65,9 +75,9 @@ ___效果如下：___
 **字体强调**    
 ~~删除线~~    
 <u>下划线</u>    
-创建脚注格式类似这样 [^RUNOOB]。
+创建脚注格式 [^footnoteFormat]。
 
-[^RUNOOB]: 菜鸟教程 -- 学的不仅是技术，更是梦想！！！
+[^footnoteFormat]: 这里是文本的补充说明。
 
 -------------------------------------------------------------------------
 
@@ -202,45 +212,54 @@ __内联图片：__
 + 紧跟着一对方括号, 包含了图片的 alt 属性;
 + 紧跟着一对圆括号, 包含了图片的 URL 或者路径, 以及一个可选的用单引号或双引号包裹的 title 属性。  
 
-_效果如下：_
-
-![Alt text](http://static.runoob.com/images/runoob-logo.png "Optional title")
-
 __引用图片：__ 
 + 语法：`![Alt 属性文本][变量]`
 + 在文档的结尾为变量赋值`[变量]: 图片地址 “可选标题”`
 
-_效果如下：_
+> Markdown 没有语法指定图片尺寸; 如果需要指定图片尺寸, 可以使用 HTML <img> 标签.
+
+
+___语法示例：___ 
+```text
+![Alt text](https://www.google.com.hk/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png "Optional title")
 
 ![Alt text][inlineImg]
 
-[inlineImg]: http://static.runoob.com/images/runoob-logo.png "Optional title attribute"
+[inlineImg]: https://www.baidu.com/img/flexible/logo/pc/result.png "Optional title attribute"
+```
 
-> Markdown 没有语法指定图片尺寸; 如果需要指定图片尺寸, 可以使用 HTML <img> 标签.
+___效果如下：___
+
+![Alt text](https://www.google.com.hk/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png "Optional title")    
+![Alt text][inlineImg]
+
+[inlineImg]: https://www.baidu.com/img/flexible/logo/pc/result.png "Optional title attribute"
 
 -------------------------------------------------------------------------
 
 ### Markdown 表格 [Table]
 
-Markdown 制作表格使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行。
+Markdown 制作表格使用 <kbd>|</kbd> 来分隔不同的单元格，使用 <kbd>-</kbd> 来分隔表头和其他行。
 
-__表格__
-+ 语法：
-    + `|  表头  | 表头  |`
-    + `|  ----   |  ----  |`
-    + `| 单元格 | 单元格 |`
-    + `| 单元格 | 单元格 |`
-+ 对齐方式：
-    + __-:__ 设置内容和标题栏居右对齐。
-    + __:-__ 设置内容和标题栏居左对齐。
-    + __:-:__ 设置内容和标题栏居中对齐。     
+__表格__ 对齐方式有三种，分别是：
++ <kbd>-:</kbd> 设置内容和标题栏居右对齐。
++ <kbd>:-</kbd> 设置内容和标题栏居左对齐。
++ <kbd>:-:</kbd> 设置内容和标题栏居中对齐。     
 
-_效果如下：_
+___语法示例：___ 
+```text
+| 左对齐 | 右对齐 | 居中对齐 |
+| :-----| ----: | :----: |
+|  左   |  右   | 单元格 |
+|  格   |  格   | 单元格 |
+```
+
+___效果如下：___
 
  | 左对齐 | 右对齐 | 居中对齐 |
  | :-----| ----: | :----: |
- | 单元格 | 单元格 | 单元格 |
- | 单元格 | 单元格 | 单元格 |
+ | 左 | 右 | 单元格 |
+ | 格 | 格 | 单元格 |
 
 -------------------------------------------------------------------------
 
@@ -254,7 +273,7 @@ __支持的 HTML 元素__
 
 __转义__
 
-Markdown 使用了很多特殊符号来表示特定的意义，如果需要显示特定的符号则需要使用转义字符，Markdown 使用反斜杠转义特殊字符：
+Markdown 使用了很多特殊符号来表示特定的意义，如果需要显示特定的符号则需要使用转义字符，Markdown 使用反斜杠转义特殊字符。
 
 __公式__
 
@@ -266,7 +285,6 @@ __公式__
 > 
 > 1. https://www.runoob.com/markdown/md-paragraph.html
 > 2. https://markdown-zh.readthedocs.io/en/latest/
-> 3. 
 
 *************************************************************************
 
